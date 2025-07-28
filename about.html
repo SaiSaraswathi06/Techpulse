@@ -3,58 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Tech Pulse</title>
+  <title>About | Tech Pulse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://i.pinimg.com/736x/93/0b/7b/930b7b50ca5c15243f160c927ef8860c.jpg') no-repeat center center fixed;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: 
+        linear-gradient(rgba(18, 18, 30, 0.8), rgba(18, 18, 30, 0.8)),
+        url('https://images.unsplash.com/photo-1505682634904-d7c9f9bdfeb2?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
-      color: #e0f2f1;
-      overflow-x: hidden;
+      color: #e2e8f0;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
+    /* Navbar */
     .navbar {
-      background: white;
-      color: #698792;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
       padding: 15px 30px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-box {
-      background-color: #064656;
-      color: white;
-      padding: 8px 12px;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-
-    .logo-text {
-      font-size: 20px;
       font-weight: 700;
-      color: #1f85a1;
+      font-size: 1.5rem;
+      color: #38bdf8;
+      letter-spacing: 1px;
     }
 
     .nav-links {
@@ -63,182 +42,164 @@
     }
 
     .nav-links a {
-      font-size: 17px;
+      text-decoration: none;
+      color: #cbd5e1;
       font-weight: 600;
-      color: #337898;
+      transition: color 0.3s ease;
     }
 
     .nav-links a:hover {
-      color: #666f78;
+      color: #38bdf8;
     }
 
-    .nav-actions {
-      display: flex;
-      gap: 10px;
-    }
-
-    .nav-actions a {
-      font-size: 15px;
-      padding: 8px 14px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .login-btn, .signup-btn {
-      background-color: #1b5d72;
-      color: white;
-    }
-
-    .login-btn:hover,
-    .signup-btn:hover {
-      background-color: rgb(127, 165, 179);
-      color: #333;
-    }
-
-    .section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .glass-box {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 30px;
-      margin-bottom: 40px;
-      color: #f0f4f5;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    .section h2 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-
-    .section p {
-      font-size: 1.1rem;
-      color: #e0f2f1;
-      margin-bottom: 20px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .stat-card {
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 16px;
+    /* About Section */
+    .about-container {
+      max-width: 1200px;
+      margin: 40px auto;
       padding: 20px;
-      backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #f8fafc;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+      margin-bottom: 40px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .about-section {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       transition: transform 0.3s ease;
     }
 
-    .stat-card:hover {
-      transform: translateY(-5px);
+    .about-section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
     }
 
-    .stat-card .value {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #074258;
+    .about-section h2 {
+      color: #38bdf8;
+      font-weight: 600;
+      margin-bottom: 15px;
     }
 
-    .stat-card .label {
-      font-size: 1rem;
-      color: #f0f0f0;
+    .about-section p {
+      color: #dbeafe;
+      line-height: 1.6;
     }
 
-    .value-cards, .team-members {
+    /* Team Section */
+    .team-section {
+      margin-top: 70px;
+      text-align: center;
+    }
+
+    .team-section h2 {
+      font-size: 2.3rem;
+      color: #f1f5f9;
+      margin-bottom: 30px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
     }
 
-    .value-card, .member {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255,255,255,0.2);
+    .member-card {
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       padding: 20px;
-      backdrop-filter: blur(6px);
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
     }
 
-    .value-card img,
-    .member img {
-      width: 50px;
-      margin-bottom: 10px;
+    .member-card:hover {
+      transform: translateY(-6px);
     }
 
-    .member img {
+    .member-card img {
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      width: 80px;
-      height: 80px;
+      border: 2px solid #38bdf8;
+      margin-bottom: 10px;
+      object-fit: cover;
     }
 
-    .member h3 {
-      margin: 10px 0 5px;
-      font-size: 18px;
-      color: #fff;
+    .member-card h3 {
+      color: #f8fafc;
+      margin: 5px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
     }
 
-    .role {
-      color: #ace1f1;
-      font-weight: bold;
-      font-size: 0.9rem;
+    /* CTA Box */
+    .cta-box {
+      background: rgba(30, 41, 59, 0.9);
+      text-align: center;
+      padding: 40px 20px;
+      border-radius: 12px;
+      margin-top: 70px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     }
 
-    .cta {
-      background: rgba(0,0,0,0.3);
-      padding: 50px 20px;
-      border-radius: 20px;
-      margin: 60px auto;
-      max-width: 800px;
-    }
-
-    .cta h2 {
+    .cta-box h2 {
       font-size: 2rem;
-      color: white;
+      color: #f8fafc;
+      margin-bottom: 15px;
     }
 
-    .cta p {
-      margin: 15px 0;
-      color: #dbeafe;
+    .cta-box p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
     }
 
-    .cta button {
-      background-color: #fff;
-      color: #084c64;
+    .cta-box a {
+      display: inline-block;
+      margin: 10px;
       padding: 12px 24px;
-      font-weight: bold;
-      border: none;
-      border-radius: 30px;
-      margin-top: 20px;
-      cursor: pointer;
+      background-color: #38bdf8;
+      color: #0f172a;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
     }
 
-    .cta button:hover {
-      background-color: #d3ecf2;
+    .cta-box a:hover {
+      background-color: #0ea5e9;
+      color: #f8fafc;
     }
 
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- Navbar -->
   <div class="navbar">
-    <div class="logo">
-      <div class="logo-box">TP</div>
-      <div class="logo-text">Tech Pulse</div>
-    </div>
+    <div class="logo">Tech Pulse</div>
     <div class="nav-links">
       <a href="#">Learning Path</a>
       <a href="#">Projects</a>
@@ -248,107 +209,67 @@
       <a href="#">About</a>
       <a href="#">Contact</a>
     </div>
-    <div class="nav-actions">
-      <a href="login3.html" class="login-btn">Log In</a>
-      <a href="signup1.html" class="signup-btn">Sign Up</a>
-    </div>
   </div>
 
-  <!-- About Hero -->
-  <div class="section">
-    <div class="glass-box">
-      <h2>About Tech Pulse</h2>
-      <p>Tech Pulse was born from a simple belief: everyone deserves access to quality tech education. We're building the future of learning, one student at a time.</p>
-    </div>
-  </div>
-
-  <!-- Stats -->
-  <div class="section">
-    <h2>Our Journey So Far</h2>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="value">50K+</div>
-        <div class="label">Active Learners</div>
+  <!-- About Content -->
+  <div class="about-container">
+    <h1>About Tech Pulse</h1>
+    <div class="about-grid">
+      <div class="about-section">
+        <h2>Our Mission</h2>
+        <p>Tech Pulse empowers learners to master technology through structured learning paths, real-world projects, and collaborative opportunities. We aim to decode the future with a platform that blends knowledge, creativity, and innovation.</p>
       </div>
-      <div class="stat-card">
-        <div class="value">500+</div>
-        <div class="label">Courses Available</div>
+      <div class="about-section">
+        <h2>What We Offer</h2>
+        <p>From beginner-friendly quizzes to advanced courses, Tech Pulse covers every level of expertise. We also provide a platform to showcase projects, connect with teammates for hackathons, and build professional resumes with ease.</p>
       </div>
-      <div class="stat-card">
-        <div class="value">100+</div>
-        <div class="label">Expert Instructors</div>
+      <div class="about-section">
+        <h2>Why Choose Us?</h2>
+        <p>With a user-focused design, interactive tools, and AI chatbot support, Tech Pulse ensures a seamless learning and project-building experience. We make tech education engaging, accessible, and future-ready.</p>
       </div>
-      <div class="stat-card">
-        <div class="value">95%</div>
-        <div class="label">Success Rate</div>
+      <div class="about-section">
+        <h2>Our Vision</h2>
+        <p>To become a global hub where aspiring tech enthusiasts and professionals collaborate, learn, and innovate to create meaningful change in the world of technology.</p>
       </div>
     </div>
-  </div>
 
-  <!-- Values -->
-  <div class="section">
-    <h2>Our Values</h2>
-    <div class="value-cards">
-      <div class="value-card">
-        <img src="https://www.svgrepo.com/show/508425/target.svg" />
-        <h3>Mission-Driven</h3>
-        <p>Committed to making tech education accessible.</p>
-      </div>
-      <div class="value-card">
-        <img src="https://www.svgrepo.com/show/493805/group.svg" />
-        <h3>Community First</h3>
-        <p>We grow together, with support and collaboration.</p>
-      </div>
-      <div class="value-card">
-        <img src="https://www.svgrepo.com/show/503154/lightbulb.svg" />
-        <h3>Innovation</h3>
-        <p>We evolve with tech trends and smarter learning.</p>
-      </div>
-      <div class="value-card">
-        <img src="https://www.svgrepo.com/show/528240/heart.svg" />
-        <h3>Passion</h3>
-        <p>We love what we do and inspire others.</p>
+    <!-- Team Section -->
+    <div class="team-section">
+      <h2>Our Team</h2>
+      <div class="team-grid">
+        <div class="member-card">
+          <img src="https://via.placeholder.com/100" alt="Member 1">
+          <h3>Member 1</h3>
+        </div>
+        <div class="member-card">
+          <img src="https://via.placeholder.com/100" alt="Member 2">
+          <h3>Member 2</h3>
+        </div>
+        <div class="member-card">
+          <img src="https://via.placeholder.com/100" alt="Member 3">
+          <h3>Member 3</h3>
+        </div>
+        <div class="member-card">
+          <img src="https://via.placeholder.com/100" alt="Member 4">
+          <h3>Member 4</h3>
+        </div>
+        <div class="member-card">
+          <img src="https://via.placeholder.com/100" alt="Member 5">
+          <h3>Member 5</h3>
+        </div>
+        <div class="member-card">
+          <img src="https://via.placeholder.com/100" alt="Member 6">
+          <h3>Member 6</h3>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Team -->
-  <div class="section">
-    <h2>Meet Our Team</h2>
-    <div class="team-members">
-      <div class="member">
-        <img src="https://via.placeholder.com/100" alt="Sarah" />
-        <h3>Sarah Johnson</h3>
-        <p class="role">Founder & CEO</p>
-        <p>Former Google engineer passionate about democratizing tech education.</p>
-      </div>
-      <div class="member">
-        <img src="https://via.placeholder.com/100" alt="Mike" />
-        <h3>Mike Chen</h3>
-        <p class="role">CTO</p>
-        <p>Full-stack developer with 10+ years experience in building platforms.</p>
-      </div>
-      <div class="member">
-        <img src="https://via.placeholder.com/100" alt="Emma" />
-        <h3>Emma Davis</h3>
-        <p class="role">Head of Education</p>
-        <p>Former university professor in computer science curriculum design.</p>
-      </div>
-      <div class="member">
-        <img src="https://via.placeholder.com/100" alt="Alex" />
-        <h3>Alex Rodriguez</h3>
-        <p class="role">Lead Designer</p>
-        <p>UX/UI expert creating intuitive and beautiful learning experiences.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- CTA -->
-  <div class="section">
-    <div class="cta">
-      <h2>Join Our Mission</h2>
-      <p>Be part of the future of tech education. Start learning today and join thousands already building their tomorrow.</p>
-      <button onclick="alert('Getting Started...')">Get Started Today</button>
+    <!-- CTA -->
+    <div class="cta-box">
+      <h2>Join Tech Pulse Today</h2>
+      <p>Start your learning journey, showcase your projects, and connect with like-minded innovators.</p>
+      <a href="#">Get Started</a>
+      <a href="#">Explore Courses</a>
     </div>
   </div>
 
